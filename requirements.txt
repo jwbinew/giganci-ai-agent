@@ -1,8 +1,7 @@
-livekit-agents[openai,deepgram,silero]>=1.0.0
+livekit-agents[openai,silero]>=1.0.0
 langchain
 langchain-community
 python-dotenv
-PyMuPDF==1.23.22
-pypdf
+PyPDF2
 chromadb
 pydantic-settings
