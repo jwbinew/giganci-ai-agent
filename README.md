@@ -1,12 +1,10 @@
 # Giganci AI Agent
-**Polskojęzyczny AI agent wspierający tutorów i wykładowców w szybkim przygotowaniu lekcji i seminariów na podstawie własnych konspektów lub PDF.**
 
-Agent odpowiada na pytania, sugeruje kolejne zagadnienia i pomaga w tworzeniu spójnej narracji lekcji, przy zachowaniu pełnej kontroli nad danymi.
+**Polskojęzyczny AI agent wspierający tutorów i wykładowców w przygotowaniu się do lekcji i seminariów.**  
 
-Struktura projektu umożliwia podmianę modelu LLM na lokalny lub offline przy minimalnej modyfikacji kodu, przy zachowaniu lokalnych embeddingów i pełnej kontroli nad danymi.
+Agent korzysta z konspektów lub plików PDF **dostarczonych przez użytkownika**, odpowiada na pytania i sugeruje kolejne zagadnienia, pomagając prelegentowi uporządkować materiał i przygotować spójną narrację.
 
-
-## Kluczowe cechy
+## Najważniejsze cechy
 * Integracja z LiveKit – szybka komunikacja głosowa i tekstowa.
 * Asynchroniczna architektura (asyncio) – obsługuje wiele zapytań równocześnie.
 * LangChain + lokalne embeddingi – pełna kontrola nad danymi PDF.
@@ -15,29 +13,44 @@ Struktura projektu umożliwia podmianę modelu LLM na lokalny lub offline przy m
 * Tryb PoC (Proof of Concept) – lekka implementacja, łatwa integracja z innymi systemami.
 * Możliwość integracji z własnym LLM offline – pełna niezależność od zewnętrznych usług (wymaga podmiany instancji LLM w kodzie).
 
-## 🇵🇱 Język i komunikacja
+## Język i komunikacja
 
 Agent prowadzi **rozmowę w języku polskim**, rozumie kontekst i naturalne zwroty.
 Pomaga w przygotowaniu się do lekcji, podsumowywaniu materiału i planowaniu zagadnień, zgodnie z treścią dostarczonego konspektu.
 
+## Prywatność i lokalność danych
+
+- **Warstwa wektorowa (embeddingi) działa lokalnie**, dzięki czemu materiały PDF pozostają w pełni pod kontrolą użytkownika.  
+- **Użycie zewnętrznego LLM (np. OpenAI)** wymaga przesłania promptów do chmury, co oznacza ograniczoną prywatność.  
+- **Pełna prywatność i kontrola** jest zachowana w przypadku podmiany modelu LLM na lokalny, działający offline.  
+
 ## Dlaczego to stworzyłem
 
 Projekt powstał, aby umożliwić **tutorom i wykładowcom szybkie, skuteczne i praktyczne przygotowanie do lekcji lub seminariów.**
+
 Agent pozwala pracować **bezpośrednio na własnych konspektach i dokumentach PDF**, przyspiesza przyswajanie materiału, pomaga w planowaniu zagadnień i formułowaniu pytań, a także wspiera tworzenie spójnej narracji lekcji lub prezentacji.
+
 Celem jest **ułatwienie codziennej pracy edukacyjnej**, przy zachowaniu pełnej kontroli nad treścią i prywatnością danych.  
 
 ## Uruchomienie
 
-1. Skopiuj `.env.example` do `.env` i uzupełnij swoje klucze.
-2. Zainstaluj zależności:
-`pip install -r requirements.txt`
-3. Uruchom agenta:
-`python agent.py`
-4. Wejdź na [LiveKit Agents Playground](https://agents-playground.livekit.io) i połącz się z agentem.
+```bash
+# Skopiuj plik .env.example do .env i uzupełnij klucze
+cp .env.example .env
+
+# Zainstaluj zależności
+pip install -r requirements.txt
+
+# Uruchom agenta
+python agent.py
+
+```
+
+Po uruchomieniu połącz się z agentem na [LiveKit Agents Playground](https://agents-playground.livekit.io).
 
 ## Prawa autorskie
 
-Projekt stworzony wyłącznie na potrzeby procesu rekrutacyjnego.
+Projekt stworzony wyłącznie na potrzeby procesu rekrutacyjnego.  
+Wszelkie prawa do kodu źródłowego i implementacji agenta AI pozostają przy autorze.  
+Projekt nie może być wykorzystywany ani rozpowszechniany poza kontekstem rekrutacji bez pisemnej zgody autora.
 
-Wszelkie prawa autorskie do kodu źródłowego i implementacji agenta AI pozostają przy autorze.  
-Nie zezwalam na jego dalsze rozpowszechnianie ani wykorzystanie poza kontekstem procesu rekrutacyjnego bez mojej pisemnej zgody.
